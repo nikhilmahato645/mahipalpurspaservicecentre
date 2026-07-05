@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SpaInDelhi from "./SpaInDelhi";
 
 export const metadata: Metadata = {
   title: "Best Spa in Delhi | Luxury Russian Banya & Massage Services | 24/7 Open",
@@ -34,39 +35,5 @@ export const metadata: Metadata = {
 };
 
 export default function SpaInDelhiPage() {
-  return (
-    <main style={{ padding: "40px" }}>
-      <h1>Best Spa in Delhi - Premium Wellness Experience</h1>
-      <p>Welcome to Russian Spa Centre, Delhi's premier destination for luxury spa services and wellness treatments. With multiple locations across Delhi NCR including Mahipalpur, Aerocity, Vasant Kunj, and near IGI Airport, we bring the finest spa experience to your doorstep.</p>
-      
-      <h2>Our Spa Services in Delhi</h2>
-      <ul>
-        <li><strong>Russian Banya:</strong> Authentic traditional steam therapy</li>
-        <li><strong>Body Massage:</strong> Swedish, Deep Tissue, Thai & more</li>
-        <li><strong>Aromatherapy:</strong> Relaxation with essential oils</li>
-        <li><strong>Couples Spa:</strong> Romantic wellness packages</li>
-        <li><strong>Hot Stone Therapy:</strong> Deep muscle relaxation</li>
-        <li><strong>Reflexology:</strong> Traditional healing therapy</li>
-        <li><strong>Wellness Packages:</strong> Customized spa experiences</li>
-      </ul>
-
-      <h2>Why Russian Spa Centre Delhi</h2>
-      <ul>
-        <li>✓ 24/7 Open - Spa whenever you want</li>
-        <li>✓ Multiple Locations Across Delhi NCR</li>
-        <li>✓ Certified & Experienced Therapists</li>
-        <li>✓ Premium Quality Products</li>
-        <li>✓ Luxury & Clean Environment</li>
-        <li>✓ Affordable Pricing with Quality Guarantee</li>
-        <li>✓ Private & Comfortable Treatment Rooms</li>
-      </ul>
-
-      <h2>Our Locations in Delhi</h2>
-      <p>Mahipalpur (near IGI Airport), Aerocity, Vasant Kunj, and other premium locations throughout Delhi NCR. All locations feature the same high standards of luxury and service.</p>
-      
-      <a href="/contact" style={{ background: "var(--gold)", padding: "12px 24px", color: "#000", textDecoration: "none", display: "inline-block", marginTop: "20px", borderRadius: "4px", fontWeight: 600 }}>
-        Find Your Nearest Spa
-      </a>
-    </main>
-  );
+  return <SpaInDelhi />;
 }

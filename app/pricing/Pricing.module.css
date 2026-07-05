@@ -1,0 +1,718 @@
+/* ============ HERO (matches spa-in-aerocity) ============ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: -76px;
+  padding: 196px 60px 100px;
+  background: var(--dark);
+  scroll-margin-top: 76px;
+  min-height: auto;
+  display: block;
+}
+.heroImage {
+  position: absolute;
+  inset: 0;
+  background: url('/home_images/mahipalpurspa8.jpg') center center / cover no-repeat fixed;
+  filter: brightness(0.8);
+}
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(12, 5, 24, 0.88) 0%, rgba(12, 5, 24, 0.62) 32%, rgba(12, 5, 24, 0.22) 58%, rgba(12, 5, 24, 0) 78%);
+  pointer-events: none;
+}
+.heroInner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 36px;
+}
+.heroContent {
+  max-width: 620px;
+}
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(124, 77, 188, 0.3);
+  background: rgba(249, 247, 253, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 7px 18px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.hero h1 em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+.heroText {
+  font-size: 0.95rem;
+  color: #fff;
+  max-width: 560px;
+  line-height: 1.9;
+  text-shadow: 0 1px 3px rgba(22, 8, 46, 0.65), 0 0 14px rgba(22, 8, 46, 0.4);
+}
+.offerBox {
+  background: linear-gradient(135deg, #A988D8 0%, #7C4DBC 55%, #6A3FAE 100%);
+  border-radius: 20px;
+  padding: 28px 36px;
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(124, 77, 188, 0.4);
+  flex-shrink: 0;
+}
+.offerPct {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+}
+.offerLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 6px;
+}
+.offerNote {
+  font-size: 0.74rem;
+  color: #fff;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ============ SHARED SECTION LAYOUT ============ */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px 60px;
+  scroll-margin-top: 76px;
+}
+.sectionTop {
+  padding-top: 0;
+}
+.sectionHead {
+  margin-bottom: 40px;
+  max-width: 680px;
+}
+.sectionHead p {
+  color: var(--muted);
+  margin-top: 14px;
+  line-height: 1.8;
+  font-size: 0.9rem;
+}
+
+/* ============ FEATURED PACKAGES ============ */
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.pkgCard {
+  background: var(--dark-3);
+  border: 1px solid rgba(124, 77, 188, 0.12);
+  border-radius: 20px;
+  padding: 36px 26px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 14px rgba(124, 77, 188, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.pkgCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(124, 77, 188, 0.14);
+  border-color: rgba(124, 77, 188, 0.3);
+}
+.pkgCardPopular {
+  border-color: var(--gold);
+  box-shadow: 0 10px 28px rgba(124, 77, 188, 0.16);
+}
+.popularBadge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #fff;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pkgIconChip {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px auto 18px;
+}
+.pkgName {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.pkgPrice {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  color: var(--gold);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pkgDuration {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.pkgIncludes {
+  text-align: left;
+  border-top: 1px solid rgba(124, 77, 188, 0.12);
+  padding-top: 18px;
+  list-style: none;
+  flex: 1;
+}
+.pkgIncludes li {
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 5px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.pkgIncludes li svg {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.pkgCta {
+  display: inline-flex;
+  width: 100%;
+  margin-top: 22px;
+  justify-content: center;
+}
+
+/* ============ HOW PRICING WORKS ============ */
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.howCard {
+  padding: 30px 22px;
+  border: 1px solid rgba(124, 77, 188, 0.1);
+  border-radius: 18px;
+  background: var(--dark-3);
+  box-shadow: 0 2px 14px rgba(124, 77, 188, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.howCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(124, 77, 188, 0.14);
+  border-color: rgba(124, 77, 188, 0.3);
+}
+.howIconChip {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.howCard h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--cream);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.howCard p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ============ PRICE TABLE ============ */
+.tableWrap {
+  background: var(--dark-3);
+  border: 1px solid rgba(124, 77, 188, 0.15);
+  box-shadow: 0 4px 24px rgba(124, 77, 188, 0.07);
+  border-radius: 20px;
+  padding: 12px 32px;
+  overflow-x: auto;
+}
+.priceTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.priceTable thead tr {
+  border-bottom: 1px solid rgba(124, 77, 188, 0.25);
+}
+.priceTable th {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 16px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+.priceTable td {
+  padding: 16px 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(124, 77, 188, 0.08);
+}
+.priceTable tbody tr:last-child td {
+  border-bottom: none;
+}
+.priceTable tr:hover td {
+  background: rgba(124, 77, 188, 0.03);
+  color: var(--cream);
+}
+.priceTable td:first-child {
+  color: var(--cream);
+  font-weight: 500;
+}
+.priceCol {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.priceColOff {
+  color: #4CAF50;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ============ VALUE COMPARISON ============ */
+.comparisonSection {
+  background: var(--gold-pale);
+  border-radius: 24px;
+  padding: 56px;
+  border: 1px solid rgba(124, 77, 188, 0.12);
+}
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.comparisonCard {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--dark-3);
+  border-radius: 18px;
+  border: 1px solid rgba(124, 77, 188, 0.1);
+}
+.comparisonCardHighlight {
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 12px 30px rgba(124, 77, 188, 0.18);
+  transform: translateY(-6px);
+}
+.comparisonIconChip {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+.comparisonLabel {
+  font-size: 0.85rem;
+  color: var(--cream);
+  font-weight: 600;
+}
+.comparisonRate {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  margin: 10px 0 2px;
+  font-weight: 500;
+}
+.comparisonFor {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.comparisonSave {
+  color: #4CAF50;
+  font-size: 0.76rem;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.comparisonNote {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============ SPECIAL OFFERS ============ */
+.offersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.offerCard {
+  background: var(--dark-3);
+  border: 1px solid rgba(124, 77, 188, 0.1);
+  border-radius: 18px;
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: 0 2px 14px rgba(124, 77, 188, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.offerCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(124, 77, 188, 0.14);
+  border-color: rgba(124, 77, 188, 0.3);
+}
+.offerIconChip {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+.offerName {
+  font-size: 0.85rem;
+  color: var(--cream);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.offerDiscount {
+  font-size: 1.5rem;
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.offerCondition {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* ============ WHAT'S INCLUDED ============ */
+.includedSection {
+  background: var(--dark-3);
+  border: 1px solid rgba(124, 77, 188, 0.12);
+  border-radius: 24px;
+  padding: 56px;
+}
+.includedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+.aiItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.aiIconChip {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.aiText strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--cream);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.aiText p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ============ CORPORATE & MEMBERSHIP ============ */
+.customSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.customCard {
+  padding: 44px;
+  background: var(--dark-3);
+  border: 1px solid rgba(124, 77, 188, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 2px 14px rgba(124, 77, 188, 0.05);
+}
+.customIconChip {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.customCard h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--cream);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.customCard p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 26px;
+}
+
+/* ============ PRICE PROMISE ============ */
+.guaranteeBox {
+  text-align: center;
+  padding: 48px 40px;
+  background: var(--gold-pale);
+  border-radius: 24px;
+}
+.guaranteeIconChip {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+.guaranteeBox h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--cream);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.guaranteeBox p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+/* ============ FAQ ============ */
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+.faqCard {
+  background: var(--dark-3);
+  border: 1px solid rgba(124, 77, 188, 0.12);
+  border-radius: 16px;
+  padding: 24px;
+}
+.faqQ {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+}
+.faqA {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ============ CTA ============ */
+.ctaSection {
+  padding: 90px 60px;
+  background: linear-gradient(135deg, #1a0835 0%, #16082e 60%, #1a0835 100%);
+  text-align: center;
+  scroll-margin-top: 76px;
+}
+.ctaSection h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.ctaSection h2 em {
+  color: var(--gold-light);
+  font-style: italic;
+}
+.ctaSection > p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 36px;
+}
+.ctaActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+.whatsappBtn:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* ============ KEYWORD CLOUD ============ */
+.keywordCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(124, 77, 188, 0.12);
+}
+.keywordPill {
+  font-size: 0.68rem;
+  color: var(--muted);
+  background: var(--gold-pale);
+  padding: 6px 16px;
+  border-radius: 100px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 176px 32px 60px;
+  }
+  .section {
+    padding: 70px 32px;
+  }
+  .packagesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .howGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+  .includedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .customSection {
+    grid-template-columns: 1fr;
+  }
+  .comparisonCardHighlight {
+    transform: none;
+  }
+  .tableWrap {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 166px 24px 50px;
+  }
+  .heroInner {
+    align-items: flex-start;
+  }
+  .offerBox {
+    padding: 22px 28px;
+  }
+  .section {
+    padding: 56px 24px;
+  }
+  .packagesGrid {
+    grid-template-columns: 1fr;
+  }
+  .howGrid {
+    grid-template-columns: 1fr;
+  }
+  .includedGrid {
+    grid-template-columns: 1fr;
+  }
+  .comparisonSection,
+  .includedSection {
+    padding: 32px 22px;
+  }
+  .customCard {
+    padding: 30px 24px;
+  }
+  .priceTable th,
+  .priceTable td {
+    padding: 12px 10px;
+    font-size: 0.78rem;
+  }
+  .ctaSection {
+    padding: 64px 24px;
+  }
+}

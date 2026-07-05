@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { MapPin, Phone, Mail, Clock, Sparkles } from "lucide-react";
+import Navbar from "./components/Navbar";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export const metadata: Metadata = {
   title: "Russian Spa Centre Mahipalpur | Luxury Spa & Massage Near Delhi Airport | 24/7 Open",
@@ -118,83 +121,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           a { color: inherit; text-decoration: none; }
           img { max-width: 100%; display: block; height: auto; }
 
-          /* NAVIGATION - Mobile First */
-          nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 16px 20px;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(124,77,188,0.15);
-            box-shadow: 0 2px 16px rgba(124,77,188,0.06);
-            flex-wrap: wrap;
-            gap: 12px;
-          }
-          .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-          }
-          .nav-logo img { height: 38px; width: auto; }
-          .nav-logo-text {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--gold);
-            letter-spacing: 0.04em;
-            line-height: 1.2;
-          }
-          .nav-logo-text span {
-            display: block;
-            font-size: 0.55rem;
-            font-family: var(--font-body);
-            font-weight: 400;
-            letter-spacing: 0.2em;
-            color: var(--muted);
-            text-transform: uppercase;
-          }
-          .nav-links {
-            display: none;
-            width: 100%;
-            flex-direction: column;
-            gap: 16px;
-            padding-top: 12px;
-          }
-          .nav-links.active { display: flex; }
-          .nav-links a {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--cream);
-            opacity: 0.75;
-            transition: opacity 0.2s;
-            padding: 6px 0;
-          }
-          .nav-cta {
-            display: none;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 8px 20px;
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
-            border-radius: 2px;
-            white-space: nowrap;
-          }
-          .menu-toggle {
-            background: none;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 6px 12px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            border-radius: 2px;
-          }
-
           /* FLOATING BUTTONS */
           .floating-buttons {
             position: fixed;
@@ -223,6 +149,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             width: 100%;
             height: 100%;
             object-fit: contain;
+          }
+          .scroll-top-btn {
+            border: none;
+            background: linear-gradient(135deg, #A988D8 0%, #7C4DBC 55%, #6A3FAE 100%);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(124,77,188,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+            opacity: 0;
+            transform: translateY(12px) scale(0.85);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s ease;
+          }
+          .scroll-top-btn-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+          }
+          .scroll-top-btn:hover {
+            box-shadow: 0 12px 26px rgba(124,77,188,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
           }
           @media (max-width: 480px) {
             .floating-buttons { bottom: 16px; right: 16px; gap: 12px; }
@@ -324,35 +268,56 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             margin: 20px 0;
           }
           .btn-gold {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 12px 28px;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #A988D8 0%, #7C4DBC 55%, #6A3FAE 100%);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
             font-family: var(--font-body);
-            transition: background 0.2s;
+            box-shadow: 0 8px 24px rgba(124,77,188,0.32), inset 0 1px 0 rgba(255,255,255,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
             cursor: pointer;
             border: none;
             text-align: center;
           }
+          .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(124,77,188,0.44), inset 0 1px 0 rgba(255,255,255,0.3);
+            filter: brightness(1.04);
+          }
           .btn-outline {
-            display: inline-block;
-            border: 1px solid var(--gold);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1.5px solid rgba(124,77,188,0.4);
+            background: rgba(124,77,188,0.04);
             color: var(--gold);
-            padding: 11px 28px;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
+            padding: 13px 30px;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
             font-family: var(--font-body);
-            transition: all 0.2s;
+            transition: all 0.25s ease;
             cursor: pointer;
             text-align: center;
           }
-          .btn-outline:hover { background: var(--gold); color: var(--dark); }
+          .btn-outline:hover {
+            background: var(--gold);
+            color: #fff;
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(124,77,188,0.28);
+          }
           .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -471,29 +436,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</style>
       </head>
       <body>
-        <nav>
-          <div className="nav-logo">
-            <img src="/logo.svg" alt="Russian Spa Centre Logo" />
-            <div className="nav-logo-text">
-              Russian Spa Centre
-              <span>Mahipalpur · Aerocity · Delhi NCR</span>
-            </div>
-          </div>
-          <div className="nav-links" id="navLinks">
-            <a href="/">Home</a>
-            <a href="/services/">Services</a>
-            <a href="/pricing/">Pricing</a>
-            <a href="/about/">About</a>
-            <a href="/contact/">Contact</a>
-          </div>
-          <a href="tel:+918929979542" className="nav-cta">📞 Book Now</a>
-          <button className="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-        </nav>
+        <Navbar />
 
-        <main style={{ marginTop: '80px' }}>{children}</main>
+        <main style={{ marginTop: '76px' }}>{children}</main>
 
-        {/* Floating WhatsApp & Call Buttons */}
+        {/* Floating Scroll-to-Top, WhatsApp & Call Buttons */}
         <div className="floating-buttons">
+          <ScrollToTopButton />
           <a
             href="https://wa.me/918929979542?text=Hello%2C%20I%20want%20to%20book%20a%20spa%20appointment"
             target="_blank"
@@ -514,10 +463,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="logo">Russian Spa Centre</div>
               <p>Delhi NCR's premier destination for authentic Russian Banya, luxury massage, and holistic wellness. Open 24/7, 365 days a year. Rated 4.8★ by 350+ satisfied clients.</p>
               <div className="contact-info">
-                <p>📍 Office No. 118, Defence Enclave, Adjoining Aerocity, Mahipalpur, New Delhi 110037</p>
-                <p>📞 +91 8929979542</p>
-                <p>✉️ info@mahipalpurspaservicecentre.com</p>
-                <p>🕐 Open 24 Hours · 7 Days a Week</p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><MapPin size={14} style={{ flexShrink: 0 }} /> Office No. 118, Defence Enclave, Adjoining Aerocity, Mahipalpur, New Delhi 110037</p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Phone size={14} /> +91 8929979542</p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Mail size={14} /> info@mahipalpurspaservicecentre.com</p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Clock size={14} /> Open 24 Hours · 7 Days a Week</p>
               </div>
             </div>
             <div className="footer-col">
@@ -568,20 +517,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="footer-bottom">
             <p>© 2026 Russian Spa Centre · mahipalpurspaservicecentre.com · All rights reserved</p>
-            <p style={{ color: 'var(--gold)', fontSize: '0.7rem', letterSpacing: '0.1em' }}>✨ 15% OFF FIRST VISIT | OPEN 24/7 ✨</p>
+            <p style={{ color: 'var(--gold)', fontSize: '0.7rem', letterSpacing: '0.1em', display: 'inline-flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}><Sparkles size={13} /> 15% OFF FIRST VISIT · OPEN 24/7 <Sparkles size={13} /></p>
           </div>
         </footer>
 
         <script dangerouslySetInnerHTML={{
           __html: `
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            if (menuToggle && navLinks) {
-              menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-              });
-            }
             // FAQ accordion
             document.querySelectorAll('.faq-question').forEach(question => {
               question.addEventListener('click', () => {
