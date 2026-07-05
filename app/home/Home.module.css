@@ -13,7 +13,7 @@
 .heroImage {
   position: absolute;
   inset: 0;
-  background: url('/home_images/mahipalpurspa15.jpg') center center / cover no-repeat fixed;
+  background: url('/home_images/mahipalpurspa15.png') center center / cover no-repeat fixed;
   filter: brightness(0.8);
 }
 .heroScrim {
