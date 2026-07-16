@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Mail, Clock, Sparkles } from "lucide-react";
 import Navbar from "./components/Navbar";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import FooterLocationSearch from "./components/FooterLocationSearch";
 
 export const metadata: Metadata = {
   title: "Russian Spa Centre Mahipalpur | Luxury Spa & Massage Near Delhi Airport | 24/7 Open",
@@ -221,6 +222,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             transition: color 0.2s;
           }
           .footer-col a:hover { color: var(--gold); }
+          .footer-location-search { margin-top: 14px; }
+          .footer-location-group { margin-bottom: 12px; }
+          .footer-location-group-title {
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 6px;
+            font-weight: 600;
+          }
+          .footer-location-group-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-height: 160px;
+            overflow-y: auto;
+            padding-right: 4px;
+          }
+          .footer-location-group-list a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            margin-bottom: 0;
+          }
+          .footer-location-group-list a svg { flex-shrink: 0; color: var(--gold); }
+          .footer-location-search-all {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.72rem;
+            color: var(--gold);
+            font-weight: 600;
+          }
           .footer-bottom {
             border-top: 1px solid rgba(124,77,188,0.15);
             padding-top: 24px;
@@ -485,11 +519,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/spa-in-mahipalpur/">Spa in Mahipalpur</a>
               <a href="/spa-in-aerocity/">Spa in Aerocity</a>
               <a href="/spa-in-vasant-kunj/">Spa in Vasant Kunj</a>
+              <a href="/spa-in-dwarka/">Spa in Dwarka</a>
+              <a href="/spa-in-gurugram/">Spa in Gurugram</a>
+              <a href="/spa-in-karol-bagh/">Spa in Karol Bagh</a>
               <a href="/spa-in-delhi/">Spa in Delhi</a>
               <a href="/russian-spa-mahipalpur/">Russian Spa Mahipalpur</a>
               <a href="/russian-spa-aerocity/">Russian Spa Aerocity</a>
               <a href="/russian-banya-delhi/">Russian Banya Delhi</a>
               <a href="/locations/">All Locations</a>
+              <FooterLocationSearch />
             </div>
             <div className="footer-col">
               <h4>Body Massage</h4>

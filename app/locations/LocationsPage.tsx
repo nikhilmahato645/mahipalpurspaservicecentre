@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import TherapistSection from "../components/TherapistSection";
+import SectorDirectory from "../components/SectorDirectory";
 import styles from "./LocationsPage.module.css";
 
 const SERVICES_ALL = [
@@ -144,6 +145,57 @@ export default function LocationsPage() {
             </div>
           </div>
 
+          {/* Gurugram (Serviced Area) */}
+          <div className={styles.locationCard}>
+            <div className={styles.locationBadge}>Serving Gurugram</div>
+            <div className={styles.locationIconChip}>
+              <Building2 size={22} strokeWidth={1.8} />
+            </div>
+            <h3>Spa for Gurugram Guests</h3>
+            <p>
+              Our centre is based in Mahipalpur, New Delhi, roughly 25-40 minutes from Gurugram via NH-48 / the
+              Delhi-Gurgaon Expressway — a regular choice for Cyber City, Golf Course Road, and Sohna Road guests.
+            </p>
+            <a href="/spa-in-gurugram/" className={styles.locationLink}>
+              Visit Spa in Gurugram Page <ArrowRight size={14} />
+            </a>
+          </div>
+
+          {/* Dwarka (Serviced Area) */}
+          <div className={styles.locationCard}>
+            <div className={styles.locationBadge}>Serving Dwarka</div>
+            <div className={styles.locationIconChip}>
+              <Building2 size={22} strokeWidth={1.8} />
+            </div>
+            <h3>Spa for Dwarka Guests</h3>
+            <p>
+              Our centre is based in Mahipalpur, New Delhi, roughly 20-30 minutes from Dwarka via the Dwarka
+              Expressway, NH-48, and the Aerocity/Airport corridor — convenient for Dwarka Sector 21 Metro,
+              Sector 10, Sector 12, Dwarka Mor, Palam, and Janakpuri guests.
+            </p>
+            <a href="/spa-in-dwarka/" className={styles.locationLink}>
+              Visit Spa in Dwarka Page <ArrowRight size={14} />
+            </a>
+          </div>
+
+          {/* Karol Bagh (Serviced Area) */}
+          <div className={styles.locationCard}>
+            <div className={styles.locationBadge}>Serving Karol Bagh</div>
+            <div className={styles.locationIconChip}>
+              <Building2 size={22} strokeWidth={1.8} />
+            </div>
+            <h3>Spa for Karol Bagh Guests</h3>
+            <p>
+              Our centre is based in Mahipalpur, New Delhi, roughly 20-30 minutes from Karol Bagh via NH-48,
+              Dhaula Kuan, and the Aerocity/Airport corridor — convenient for Karol Bagh Metro Station, Ajmal
+              Khan Road, Ghaffar Market, Tank Road, Pusa Road, Rajendra Place, Jhandewalan, and Patel Nagar
+              guests.
+            </p>
+            <a href="/spa-in-karol-bagh/" className={styles.locationLink}>
+              Visit Spa in Karol Bagh Page <ArrowRight size={14} />
+            </a>
+          </div>
+
           {/* Other Locations */}
           <div className={styles.locationCard}>
             <div className={styles.locationIconChip}>
@@ -153,6 +205,20 @@ export default function LocationsPage() {
             <p>Multiple spa centers across Delhi NCR. Call +91 8929979542 for more location details.</p>
           </div>
         </div>
+      </section>
+
+      {/* SECTOR / LOCALITY DIRECTORY (GURUGRAM, DWARKA, NOIDA) */}
+      <section className={styles.section} style={{ paddingTop: 0 }}>
+        <div className={styles.sectionCenterHead}>
+          <div className="section-label" style={{ justifyContent: "center" }}>
+            Sector Directory
+          </div>
+          <h2 className="section-title">
+            Find Your <em>Sector or Locality</em>
+          </h2>
+          <p>Browse every Gurugram, Dwarka, and Noida sector page we serve.</p>
+        </div>
+        <SectorDirectory />
       </section>
 
       {/* SERVICES AT ALL LOCATIONS */}

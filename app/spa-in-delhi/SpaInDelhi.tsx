@@ -42,6 +42,7 @@ const LOCATIONS = [
   { name: "Mahipalpur", sub: "Near IGI Airport", href: "/spa-in-mahipalpur" },
   { name: "Aerocity", sub: "Delhi NCR", href: "/spa-in-aerocity" },
   { name: "Vasant Kunj", sub: "Delhi NCR", href: "/spa-in-vasant-kunj" },
+  { name: "Gurugram Guests", sub: "25-40 min via NH-48", href: "/spa-in-gurugram" },
 ];
 
 export default function SpaInDelhi() {

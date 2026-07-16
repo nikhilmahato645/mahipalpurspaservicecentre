@@ -16,6 +16,7 @@ import {
   Search,
 } from "lucide-react";
 import styles from "./Navbar.module.css";
+import { SECTOR_REGISTRY } from "../data/sectorRegistry";
 
 const DESKTOP_LINKS = [
   { href: "/", label: "Home" },
@@ -47,9 +48,16 @@ const LOCATIONS = [
   { href: "/body-massage-aerocity/", label: "Body Massage Aerocity" },
   { href: "/spa-in-vasant-kunj/", label: "Spa in Vasant Kunj" },
   { href: "/body-massage-vasant-kunj/", label: "Body Massage Vasant Kunj" },
+  { href: "/spa-in-dwarka/", label: "Spa in Dwarka" },
+  { href: "/spa-in-karol-bagh/", label: "Spa in Karol Bagh" },
   { href: "/spa-in-delhi/", label: "Spa in Delhi" },
   { href: "/russian-banya-delhi/", label: "Russian Banya Delhi" },
   { href: "/couple-spa-delhi/", label: "Couples Spa Delhi" },
+  { href: "/spa-in-gurugram/", label: "Spa in Gurugram" },
+  ...SECTOR_REGISTRY.map((entry) => ({
+    href: `/${entry.slug}/`,
+    label: `Spa in ${entry.displayName}`,
+  })),
 ];
 
 export default function Navbar() {

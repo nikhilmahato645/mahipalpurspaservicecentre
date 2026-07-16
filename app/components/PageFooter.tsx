@@ -32,6 +32,7 @@ export default function PageFooter() {
                 <li style={{ marginBottom: "8px" }}><a href="/spa-in-mahipalpur/" style={{ color: "var(--cream)", textDecoration: "none", fontSize: "0.9rem" }}>🏢 Spa in Mahipalpur</a></li>
                 <li style={{ marginBottom: "8px" }}><a href="/spa-in-aerocity/" style={{ color: "var(--cream)", textDecoration: "none", fontSize: "0.9rem" }}>✈️ Spa in Aerocity</a></li>
                 <li style={{ marginBottom: "8px" }}><a href="/spa-in-vasant-kunj/" style={{ color: "var(--cream)", textDecoration: "none", fontSize: "0.9rem" }}>🏙️ Spa in Vasant Kunj</a></li>
+                <li style={{ marginBottom: "8px" }}><a href="/spa-in-karol-bagh/" style={{ color: "var(--cream)", textDecoration: "none", fontSize: "0.9rem" }}>🛍️ Spa in Karol Bagh</a></li>
                 <li><a href="/spa-in-delhi/" style={{ color: "var(--cream)", textDecoration: "none", fontSize: "0.9rem" }}>🗺️ Spa in Delhi</a></li>
               </ul>
             </div>
